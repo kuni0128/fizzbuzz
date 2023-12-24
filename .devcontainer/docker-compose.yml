@@ -1,0 +1,15 @@
+services:
+  workspace:
+    build:
+      context: ./docker/workspace
+      args:
+        USERNAME: ${USERNAME-vscode}
+        USER_UID: ${USER_UID-1000}
+        USER_GID: ${USER_GID-1000}
+        TIME_ZONE: ${TIME_ZONE-UTC}
+        LOCALE: ${LOCALE-C}
+    tty: true
+    volumes:
+      - ../:/var/www
+      - ./docker/workspace/config/php.ini:/usr/local/etc/php/conf.d/99-php.ini
+    working_dir: /var/www
