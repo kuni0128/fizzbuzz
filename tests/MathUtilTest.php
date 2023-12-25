@@ -9,13 +9,19 @@ class MathUtilTest extends TestCase
 {
     public function testSaturate(): void
     {
-        $mathStub = $this->createMock(Math::class);
-        $mathStub->method('max')->willReturn(2);
-        $mathStub->method('min')->willReturn(2);
+        $math = $this->createMock(Math::class);
+        $math->expects($this->atLeastOnce())
+            ->method('max')
+            ->with($this->equalTo(2), $this->equalTo(1))
+            ->willReturn(2);
 
-        $mathUtil = new MathUtil($mathStub);
+        $math->expects($this->atLeastOnce())
+            ->method('min')
+            ->with($this->equalTo(2), $this->equalTo(3))
+            ->willReturn(2);
+        $mathUtil = new MathUtil($math);
+
         $actual = $mathUtil->saturate(2, 1, 3);
-
         $this->assertEquals(2, $actual);
 
         // // 範囲内ならそのまま
