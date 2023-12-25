@@ -21,9 +21,12 @@ class MathTest extends TestCase
     public function testMax(): void
     {
         $math = new Math();
-
-        $expectedMax = 2;
-        $actualMax = $math->max(1, 2);
-        $this->assertEquals($expectedMax, $actualMax);
+        $this->assertEquals(1, $math->max(0, 1));
+        $this->assertEquals(1, $math->max(1, 0));
+        $this->assertEquals(0, $math->max(0, -1));
+        $this->assertEquals(0, $math->max(-1, 0));
+        $this->assertEquals(0, $math->max(0, 0));
+        $this->assertEquals(PHP_INT_MAX, $math->max(0, PHP_INT_MAX));
+        $this->assertEquals(0, $math->max(0, PHP_INT_MIN));
     }
 }
