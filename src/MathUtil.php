@@ -1,4 +1,7 @@
 <?php
+
+namespace Math;
+
 class MathUtil
 {
     public function __construct(
