@@ -1,4 +1,7 @@
 <?php
+
+namespace Math;
+
 class Math
 {
     public function min(int $a, int $b): int
