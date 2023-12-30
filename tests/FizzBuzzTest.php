@@ -19,5 +19,7 @@ class FizzBuzzTest extends TestCase
         $this->assertEquals('1', $fizzBuzz->convert(1));
         $this->assertEquals('2', $fizzBuzz->convert(2));
         $this->assertEquals('Fizz', $fizzBuzz->convert(3));
+        $this->assertEquals('Buzz', $fizzBuzz->convert(5));
+        $this->assertEquals('FizzBuzz', $fizzBuzz->convert(15));
     }
 }
