@@ -2,13 +2,12 @@
 
 namespace FizzBuzz;
 
-use FizzBuzz\App\FizzBuzzSequencePrinter;
-
 class App
 {
     public static function main(): void
     {
-        $printer = new FizzBuzzSequencePrinter();
+        $factory = new FizzBuzzAppFactory();
+        $printer = $factory->create();
         $printer->printRange(1, 100);
     }
 }
