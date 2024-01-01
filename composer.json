@@ -13,5 +13,10 @@
             "FizzBuzz\\": "tests/",
             "Math\\": "tests/"
         }
+    },
+    "require": {
+        "symfony/config": "^6.4",
+        "symfony/dependency-injection": "^6.4",
+        "symfony/yaml": "^6.4"
     }
 }
